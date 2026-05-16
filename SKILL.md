@@ -1,11 +1,13 @@
 ---
 name: surprise-buddy
-description: Look up curated gift ideas from the Surprise Buddy database — country-scoped product cards with title, image, price, and a ready-to-click product link (already contains our affiliate referral). Use when a user is looking for a gift for someone and you know at least their country and a rough idea of the occasion/age/interests.
+description: Look up curated gift ideas from the Surprise Buddy database — country-scoped product cards with title, image, price, and a ready-to-click product link. International coverage across many countries and marketplaces. Use when a user is looking for a gift for someone and you know at least their country and a rough idea of the occasion/age/interests.
 ---
 
 # Surprise Buddy gift-search skill
 
-A live MCP HTTP server at `https://www.surprise-buddy.com/api/mcp` exposes a small set of tools that query a curated, country-scoped database of 5000+ gift ideas across 50 countries. Every result is a real product page on a real marketplace (Amazon, Etsy, Mercado Libre, Otto, Bol.com, Allegro, Jochen Schweizer), with our affiliate referral already baked into the URL — you can present the link directly to the user.
+A live MCP HTTP server at `https://www.surprise-buddy.com/api/mcp` exposes a small set of tools that query a curated, country-scoped database of gift ideas. International coverage — every result is a real product page on a real marketplace (Amazon, Etsy, Mercado Libre, Otto, Bol.com, Allegro, Jochen Schweizer) and the link can be presented to the user as-is.
+
+Call `list_supported_countries` for the current list of countries; coverage grows over time.
 
 ## Tools
 
@@ -45,7 +47,7 @@ When a user asks for gift help:
 1. Pull country, occasion, age, budget, interests from the conversation (ask if any are missing — country is mandatory).
 2. Convert the budget to cents in the **country's currency**, not a foreign currency.
 3. Call `find_gifts`.
-4. Render each gift as a card: title, image, price (with currency), why-it-fits, and a markdown link `[Buy on Amazon](product_url)`. **Do not strip query params from `product_url`** — they are our affiliate referral.
+4. Render each gift as a card: title, image, price (with currency), why-it-fits, and a markdown link `[Buy on Amazon](product_url)`. **Do not strip query params from `product_url`** — use the URL exactly as returned.
 
 ## Example
 

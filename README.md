@@ -6,7 +6,7 @@ This repository contains the canonical `SKILL.md` for AI agents (Claude, ChatGPT
 
 ## What is Surprise Buddy?
 
-Surprise Buddy is a curated, country-scoped gift database with **5000+ verified product links across 50 countries**, exposed via a public Model Context Protocol (MCP) server. Every result is a real product page on a real marketplace — Amazon, Etsy, Mercado Libre, Otto, Bol.com, Allegro, Jochen Schweizer — with the affiliate referral already baked into the URL.
+Surprise Buddy is a curated, country-scoped gift database exposed via a public Model Context Protocol (MCP) server. International coverage — every result is a real product page on a real marketplace (Amazon, Etsy, Mercado Libre, Otto, Bol.com, Allegro, Jochen Schweizer) and the link can be presented to the user as-is.
 
 **Live MCP endpoint:** `https://www.surprise-buddy.com/api/mcp`
 
